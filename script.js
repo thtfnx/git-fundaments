@@ -68,9 +68,9 @@ console.log(answer)
 
                         // FOR LOOP
 // //  First way
-for (let i = 0; i <= 20; i++) {
-   console.log(i)
-}
+// for (let i = 0; i <= 20; i++) {
+//    console.log(i)
+// }
 
 // Second way
 // let i = 0
@@ -80,11 +80,11 @@ for (let i = 0; i <= 20; i++) {
 // }while(i < 20)
 
 // Third way 
-// let i = 0 
-// while (i < 20) {
-//     console.log(i)
-//     i++
-// }
+let i = 0 
+while (i < 20) {
+    console.log(i)
+    i++
+}
 
 
 let answers = []
