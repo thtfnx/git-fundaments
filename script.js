@@ -126,7 +126,7 @@
 
 
 
-                       //FUNKSIYA VA RETURN
+                       // FUNCTION and RETURN
                  
 // function myFirstFunction() {
 //     console.log('HI !!!  My name is Aziz')
@@ -134,16 +134,14 @@
 // myFirstFunction()         
 
 
-// FUNCTION EXPRESSION
-// let myFunc = function() {
+// // FUNCTION EXPRESSION
+//  let myFunc = function() {  // buni o'rni almashsa natija chiqmaydi
 //     console.log ('this function is expression')
 // }
 // myFunc()
 
-
-// myFirstFunction( name = "Aziz")  //o'rni almashsa ham natija o'zgarmaydi
-
-// FUNCTION DECLORATION
+// // FUNCTION DECLORATION
+// // myFirstFunction( name = "Aziz")  //o'rni almashsa ham natija o'zgarmaydi
 // let num = 5
 // function myFirstFunction(name) {
 //     let num = 10
@@ -158,38 +156,158 @@
 
 
 
-function myFirstApp(name, age) {
-    alert(`Hi, my name is ${name} and I am full stack developer`)
+// function myFirstApp(name, age) {
+//     alert(`Hi, my name is ${name} and I am full stack developer`)
 
 
-    function showSkills() {
-        let skills = ['Html', 'CSS', 'Javascript']
-        for (let i = 0; i < skills.length; i++)
-           alert(`I have skills ${skills[i]}`)
-    }
-    showSkills()
+//     function showSkills() {
+//         let skills = ['Html', 'CSS', 'Javascript']
+//         for (let i = 0; i < skills.length; i++)
+//            alert(`I have skills ${skills[i]}`)
+//     }
+//     showSkills()
 
-    function checkAge() {
-      let age = prompt(message = 'Yoshinigiz nechada ?')  
-       if(age > 18){
-        alert (`Exactly data for learning IT`)
-       }
-       else if (age < 18) {
-        alert (`Super data for learning IT`)
-       }
-    }
-    checkAge()
- // RETURN - haqida qisqacha tushuncha
+//     function checkAge() {
+//       let age = prompt(message = 'Yoshinigiz nechada ?')  
+//        if(age > 18){
+//         alert (`Exactly data for learning IT`)
+//        }
+//        else if (age < 18) {
+//         alert (`Super data for learning IT`)
+//        }
+//     }
+//     checkAge()
+
+// " RETURN - haqida qisqacha tushuncha"
   
 // function name () {
 //     return ( "Hi my name is Aziz")
 // }
 // console.log(name())
-     function calcPow(num){
-        return num * num
-     }
-     console.log(calcPow(num = 5))
+//      function calcPow(num){
+//         return num * num
+//      }
+//      console.log(calcPow(num = 5))
+// }
+// myFirstApp( name = "Aziz", age = 18)
+
+
+
+            //   LESSON : THIS  ,  BIND
+// function Aziz () {
+//     console.log(this)
+// }
+
+
+// // OBJECTNI ICHIDAGI 'THIS' OBJECTNI O'ZIGA TENG
+// const person = {
+//     name : 'Aziz',
+//     age : 19,
+//     job : 'Pythondev',
+//     callContext : Aziz,
+//     callAnotherContext : Aziz.bind(this),
+//     callInfoJob : function(number) {
+//         console.group(`${this.name} info: `);
+//      console.log(`Name is ${person.name}`);
+//      console.log(`Age is ${person.age}`);
+//      console.log(`Job is ${person.job}`);
+//      console.log(`Contact is ${number}`);
+//         console.groupEnd();
+//     }
+// }
+
+
+// const frontendev = {
+//  name : 'Azico',
+//  age : 16,
+//  job : 'front-end dev'
+// }
+
+// const fullInfo = person.callInfoJob.bind(frontendev , '+998-(93)-689-76-97 ') () ;
+
+
+//           // CALL  ,  APPLY
+// person.callInfoJob.apply(frontendev , ['+998-(93)-689-76-97 '])   
+// person.callInfoJob.call(frontendev , '+998-(93)-689-76-97 ')        
+
+
+
+              // ========== //
+            //   First way 
+
+// const array = [19 , 27, 48, 73] ;
+
+// function mult(arr , number) {
+//     return arr . map(function (i) {
+//         return i * number
+//     })
+// }
+// console.log(mult(array, number = 6));
+
+            //   Second way
+
+// const array = [34, 44 , 64 ,43]
+
+// Array.prototype.logger = function (number) {
+//     return this.map (function (i) {
+//     return i * number
+//     })
+// }
+// console.log(array .logger(4));
+
+
+                    //    Closure/
+// // //  //  //  //  //  //  ///  ///  /// //  //  // 
+
+function urlGenerator (domain) {
+    return function (host) {
+        return `https://${host}. ${domain}`
+    }
 }
-myFirstApp( name = "Aziz", age = 18)
+
+const comUrl = urlGenerator ('com')
+
+console.log(comUrl('google'));
+console.log(comUrl('netflix'));
+console.log(comUrl('instagram'));
+console.log(comUrl('facebook'));
+
+const ruUrl = urlGenerator ('ru')
+
+console.log(ruUrl('yandex'));
+console.log(ruUrl('mail'));
+console.log(ruUrl('ok'));
+console.log(ruUrl('sefan'));
+
+//   //   //   //  //   //   //  //
+
+function bind ( context , fn) {
+    return function ( ...args) {
+        fn.apply (context , args)
+    }
+}
+
+function personInfo () {
+    console.log(`
+    Name = ${this.name},
+    Age = ${this. age}, 
+    Job = ${this. job}`);
+}
+
+const Aziz = {
+   name: 'Aziz',
+   age: 18,
+   job: 'Pythondev' 
+}
+
+const Azico = {
+   name: 'Azico',
+   age: 19,
+   job: 'front-End dev'
+}
+
+bind(Aziz, personInfo)()
+bind(Azico, personInfo) ()
+
 
 
