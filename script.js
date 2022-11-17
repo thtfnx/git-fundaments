@@ -259,55 +259,305 @@
                     //    Closure/
 // // //  //  //  //  //  //  ///  ///  /// //  //  // 
 
-function urlGenerator (domain) {
-    return function (host) {
-        return `https://${host}. ${domain}`
-    }
-}
+// function urlGenerator (domain) {
+//     return function (host) {
+//         return `https://${host}. ${domain}`
+//     }
+// }
 
-const comUrl = urlGenerator ('com')
+// const comUrl = urlGenerator ('com')
 
-console.log(comUrl('google'));
-console.log(comUrl('netflix'));
-console.log(comUrl('instagram'));
-console.log(comUrl('facebook'));
+// console.log(comUrl('google'));
+// console.log(comUrl('netflix'));
+// console.log(comUrl('instagram'));
+// console.log(comUrl('facebook'));
 
-const ruUrl = urlGenerator ('ru')
+// const ruUrl = urlGenerator ('ru')
 
-console.log(ruUrl('yandex'));
-console.log(ruUrl('mail'));
-console.log(ruUrl('ok'));
-console.log(ruUrl('sefan'));
+// console.log(ruUrl('yandex'));
+// console.log(ruUrl('mail'));
+// console.log(ruUrl('ok'));
+// console.log(ruUrl('sefan'));
 
 //   //   //   //  //   //   //  //
 
-function bind ( context , fn) {
-    return function ( ...args) {
-        fn.apply (context , args)
-    }
-}
+// function bind ( context , fn) {
+//     return function ( ...args) {
+//         fn.apply (context , args)
+//     }
+// }
 
-function personInfo () {
-    console.log(`
-    Name = ${this.name},
-    Age = ${this. age}, 
-    Job = ${this. job}`);
-}
+// function personInfo () {
+//     console.log(`
+//     Name = ${this.name},
+//     Age = ${this. age}, 
+//     Job = ${this. job}`);
+// }
 
-const Aziz = {
-   name: 'Aziz',
-   age: 18,
-   job: 'Pythondev' 
-}
+// const Aziz = {
+//    name: 'Aziz',
+//    age: 18,
+//    job: 'Pythondev' 
+// }
 
-const Azico = {
-   name: 'Azico',
-   age: 19,
-   job: 'front-End dev'
-}
+// const Azico = {
+//    name: 'Azico',
+//    age: 19,
+//    job: 'front-End dev'
+// }
 
-bind(Aziz, personInfo)()
-bind(Azico, personInfo) ()
+// bind(Aziz, personInfo)()
+// bind(Azico, personInfo) ()
 
 
+ // // // //  //  //  //  //  //  //  
 
+
+                //  . LocalStorage
+
+// const number = 8;
+
+// localStorage.removeItem('number')
+// console.log(localStorage.getItem('number'));
+// localStorage.setItem('number', number.toString())
+// console.log(localStorage.getItem('number'));
+// localStorage.clear()
+
+// //   //    //    //    //
+
+// const person = {
+//     name: 'Aziz', 
+//     age: 19,
+//     job:'Pythondev' 
+
+// }
+
+// localStorage.setItem('person', JSON.stringify(person))
+// const localData = localStorage.getItem('person')
+// const personInfo = JSON.parse(localData)
+
+// personInfo.name = 'Azico'
+// console.log(personInfo);
+
+// console.log(JSON.parse(localData)); // 1 way 
+// console.log(localData);  // 2 way
+ 
+// localStorage.setItem('updatePerson', JSON.stringify(personInfo))
+
+//                  // // //  JSON    
+// localStorage.setItem('person', person.toString)
+
+// const json = JSON.stringify(person)
+
+// console.log('obj to json' ,json);
+
+// const obj = JSON.parse(json)
+
+// console.log('json to obj', obj);
+
+
+//   //   //   //   //   //   //   //   //    //    //    //    //    //    //    //  
+               
+                        // Class, getters & setters
+// class Car {
+//     constructor(options) {
+//         this.name = options.name
+//         this.isAirBag = options.isAirBag
+//         this.extraBalon = options.extraBalon
+//     }
+//     speed () {
+//         console.log('350 km/h');
+//     }
+// }
+// const BMW = new Car ( {
+//     name: 'BMW',
+//     isAirBag: true,
+//     extraBalon: 2
+// })
+// class BUS  extends Car {
+//     static type = 'BUS'
+// }
+// class Bus extends Car  {
+//     constructor(options ) {
+//         super(options)
+//         this.weight = options.weight 
+//     }
+//     speed() {
+//         super.speed()
+//         console.log(' 60 km/h')
+//     }
+//     get extraBalonInfo() {
+//         return this.extraBalon * 3
+//     }
+//     set extraBalonInfo(newValue) {
+//         this.extraBalon = newValue
+//     }
+// }
+// const Man  = new Bus ( {
+//     name: 'MAN', 
+//     isAirBag: false,
+//     extraBalon: 1,
+//     weight: '40,000 kg'
+// })
+
+
+    //    //    //    //    //    //    //
+
+// class Component {
+//     constructor(selector) {
+//         this.$el = document.querySelector(selector)
+//     }
+
+//     showElement() {
+//          this.$el.style.display = 'block'
+//     }
+
+//     hideElement() {
+//          this.$el.style.display = 'none'
+//     }
+// }    
+
+
+// class Square extends Component {
+//     constructor(options) {
+//         super(options.selector);
+//         this.$el.style.width = this.$el.style.height = options.size + 'px';
+//         this.$el.style.background = options.color
+//      }
+// }
+
+// const square1 = new Square (options = {
+//          selector: "#square1",
+//          size: 100,
+//          color: 'violet'
+// } )
+
+// const square2 = new Square (options = {
+//     selector: "#square2",
+//     size: 100,
+//     color: 'blue'
+// } )
+
+
+// class Circle extends Square {
+//     constructor(options) {
+//         super(options);
+//         this.$el.style.borderRadius = '50%'
+
+//      } 
+// }    
+
+// const circle1 = new Circle (options = {
+//     selector: "#circle",
+//     size: 100,
+//     color: 'black'
+// } )
+
+
+//    //    //    //   //     //     //   // 
+                            //   Amaliyot
+//                           // Функция Конструктор
+// function User (name, id) {
+//     this.name = name;
+//     this.id = id; 
+//     this.human = true;
+//     this.hello = function () {
+//         console.log(`Hello ${this.name}`);
+//     }
+// }
+
+// User.prototype.exit = function() {
+//    console.log(`User ${this.name} exit`);
+// }
+// const Azico = new User ('Aziz' , '4')
+// const Sammi = new User ('Sammi' , '5')
+// const yusuf = new User ('Yusuf' , '19')
+
+// Azico.exit()
+// Sammi.exit()
+// yusuf.hello()
+
+// console.log(Azico);
+// console.log(Sammi); 
+
+            // // Контекст Визова : This
+
+// function hi () {
+//     console.log(this);
+// }
+// hi()
+
+// function showThis (a, b) {
+//     console.log(this);
+// function summ () {
+//     console.log (this);
+//     return a + b 
+// }
+// console.log( summ());
+// }
+// showThis(a = 2, b = 3);
+
+//      //     //  Контекст Визова : This  Second way
+
+// const obj = {
+//     a: 43,
+//     b: 38,
+//     c: 32,
+//  sum: function () {
+//         console.log(`${this.a} + ${this.b} + ${this.c}` );
+//     }
+// }
+
+// obj.sum ()
+
+
+          //    //    Обычный Функция  This = Window
+// function User (name, id) {
+//     this.name = name,
+//     this.id = id,
+//     this.age = 19,
+//     this.human = true
+//     this.hello = function () {
+//         console.log(`Hello ${this.name}`);
+//     }
+// }          
+
+
+// const Azico = new User ('Aziz', 4)
+// const yusuf = new User ('Yusuf', 9)
+
+// console.log(Azico);
+// Azico.hello()
+
+// console.log(yusuf);
+// yusuf.hello()
+
+
+// //    // Call,  // Apply,  //Bind
+ 
+// function sayName (surname) {
+//     console.log(this);
+//     console.log(this.name + surname)
+// }
+
+
+// const user = {
+//     name: 'Aziz'
+// }
+
+// sayName.call(user, ' ibn Nasim')
+// sayName.apply(user, [' Ibn Nasim'])
+
+// function count (num) {
+//     return this + num
+// }
+
+// const double = count.bind(this.Arg = 2)
+// console.log(double(13));
+// console.log(double(19));
+// console.log(double(14));
+
+// const btn = document.querySelector('button') 
+// btn.addEventListener('click', function () {
+//     this.style.backgroundColor = 'red' 
+// })
