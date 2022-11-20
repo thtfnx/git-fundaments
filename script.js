@@ -560,4 +560,23 @@
 // const btn = document.querySelector('button') 
 // btn.addEventListener('click', function () {
 //     this.style.backgroundColor = 'red' 
-// })
+// // })
+
+
+// setTimeout( function() {
+//   alert('hi bruh')
+// } ,1000)
+window.addEventListener('DOMContentLoaded', () => {
+  const loader = document.querySelector('.loader')
+
+  setTimeout( () => {
+    loader.style.opacity = '0'
+    setTimeout( () => {
+      loader.style.display = 'none'
+    }, 500)
+  }, 2000)
+})
+
+// setInterval( function() {
+//   alert('hi bro')
+// } ,2000)

@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"name": "lessons",
+			"path": "."
+		},
+		{
+			"name": "js_practise_starter_file-main",
+			"path": "C:/Users/12/Desktop/js_practise_starter_file-main"
+		},
+		{
+			"name": "dom-js-tutorial-main",
+			"path": "C:/Users/12/Desktop/dom-js-tutorial-main"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "js_practise_starter_file-main"
+	}
+}
